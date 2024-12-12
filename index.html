@@ -267,8 +267,6 @@
                 alert("이름을 입력해주세요!");
                 return;
             }
-
-            window.scrollTo(0, 0);
             
             const luck = Math.floor(Math.random() * 5) + 1;
             const fortuneMessages = fortunes[luck];
@@ -302,6 +300,11 @@
             document.querySelector('.fortune-container').style.display = 'flex';
             document.querySelector('.reset-container').style.display = 'flex';
             document.querySelector('#userMessage').textContent = `${name}님의 하루에 행운이 가득하기를!`;
+
+            // 페이지가 완전히 로드된 후에 스크롤을 맨 위로 이동
+            setTimeout(function() {
+                window.scrollTo(0, 0);
+            }, 100);  // 100ms 뒤에 실행되도록 설정
         }        
         
 
