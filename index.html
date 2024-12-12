@@ -27,7 +27,7 @@
             overflow-y: scroll; /* 세로 스크롤 추가 */
         }
         .overlay {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -143,6 +143,26 @@
             color: #FF9A36;
             margin-top: 200px; /* 수정된 margin-top */
             text-align: center;
+        }
+        @media (max-width: 768px) {
+        body {
+            font-size: 16px; /* 모바일 화면에서 폰트 크기 16px로 조정 */
+        }
+
+        h1 {
+            font-size: 24px; /* 모바일 화면에서 h1 폰트 크기 조정 */
+        }
+
+        .input-container input {
+            font-size: 16px; /* 모바일 화면에서 입력 폰트 크기 조정 */
+        }
+
+        .fortune-container .fortune-text {
+            font-size: 20px; /* 모바일 화면에서 운세 메시지 폰트 크기 조정 */
+        }
+
+        .lucky-number {
+            font-size: 30px; /* 모바일 화면에서 럭키넘버 폰트 크기 조정 */
         }
     </style>
 </head>
