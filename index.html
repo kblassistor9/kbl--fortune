@@ -242,7 +242,7 @@
 
     <script>
         const fortunes = {
-            1: ["턴오버 주의!<br>신중한 플레이가 필요해요.",
+            1: ["신중한 플레이가 필요해요.",
                 "시야를 넓힐 필요가 있어요.", 
                 "지칠 땐 신발 끈을 다시 묶어보세요.",
                 "유독 공이 미끄러운 날이에요."],
@@ -258,6 +258,7 @@
                 "위기를 이겨낼 수 있어요."],
             4: ["노력은 배신하지 않아요.",
                 "몸과 마음이 가벼워지는 날이에요.",
+                "평소보다 더 높이 점프할 수 있어요.",
                 "팀원들과의 시너지가 돋보이는 날이에요.",
                 "기대했던 결과를 얻을 수 있어요.",
                 "오늘은 느낌이 좋아요.<br>자신 있게 던져보세요.",
@@ -287,6 +288,8 @@
             document.getElementById('currentDate').innerText = formattedDate;
         }
 
+        const weightedLuck = [1, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5];
+
         function getFortune() {
             const name = document.getElementById('name').value;
             if (!name) {
@@ -294,7 +297,7 @@
                 return;
             }
             
-            const luck = Math.floor(Math.random() * 5) + 1;
+            const luck = weightedLuck[Math.floor(Math.random() * weightedLuck.length)];
             const fortuneMessages = fortunes[luck];
             const randomMessage = fortuneMessages[Math.floor(Math.random() * fortuneMessages.length)];
 
